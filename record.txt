@@ -1,0 +1,30 @@
+1. NeRF：
+	NeRF论文代码：https://github.com/bmild/nerf（tensorflow1）
+	nerf-pytorch项目：https://github.com/yenchenlin/nerf-pytorch(1.3faster)
+	
+1.1 激活环境
+	打开anaconda图形界面： anaconda-navigator 
+	查看已配置环境：conda env list
+	激活环境：source activate nerf
+	关闭环境：conda deactivate
+	
+1.2 训练测试模型
+	训练模型：python run_nerf.py --config configs/{DATASET}.txt
+		output:./logs/blender_paper_lego/200000.tar(model) and blender_paper_lego_spiral_200000_rgb.mp4
+		
+	测试模型：python run_nerf.py --config configs/{DATASET}.txt --render_only
+		(replace {DATASET} with trex | horns | flower | fortress | lego | etc.)
+		output：./logs/blender_paper_lego/renderonly_path_199999/video.mp4
+		
+1.3 输入输出
+	数据集构建：
+		./data/nerf_llff_data
+		./data/nerf_synthetic
+	
+	训练模型存放：./logs/{DATASET}_test
+	
+1.4参数设置
+	configs:./configs/{DATASET}.txt
+	训练次数：N_iters
+		
+
